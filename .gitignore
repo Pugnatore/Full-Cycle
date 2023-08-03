@@ -3,3 +3,5 @@
 /mysql
 /nginx
 /node
+/desafio_nginx/mysql
+/desafio_nginx/node_modules 
