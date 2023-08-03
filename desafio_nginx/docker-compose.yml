@@ -3,11 +3,11 @@ version: '3'
 services:
   app:
     build:
-      context: node
+      context: ./node
     networks:
       - node_network
     volumes:
-      - ./node:/usr/src/app
+      - ./node/index.js:/usr/src/app/index.js
     tty: true
     container_name: app
     ports:
