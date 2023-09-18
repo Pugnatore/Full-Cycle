@@ -4,4 +4,5 @@
 /nginx
 /node
 /desafio_nginx/mysql
-/desafio_nginx/node_modules 
+/desafio_nginx/node_modules
+/modulo4/api-tools-skeleton
