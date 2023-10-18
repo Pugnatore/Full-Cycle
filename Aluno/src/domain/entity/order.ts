@@ -16,7 +16,7 @@ export default class Order {
 
     validate() {
         if(this._id.length === 0){
-            throw new Error("Id is required");
+            throw new Error("Id is required"); 
         }
 
         if(this._customerId.length === 0){
