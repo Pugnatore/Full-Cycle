@@ -13,8 +13,9 @@ export class Customer{
         this.validate();
     }
 
-    set Address(newAddress: Address){
-        this._address = newAddress;
+    
+    get Address(): Address{
+        return this._address;
     }
 
     get name(): string{
@@ -41,6 +42,10 @@ export class Customer{
 
     changeName(newName: string){
         this._name = newName;
+    }
+
+    changeAddress(newAddress: Address){
+        this._address = newAddress;
     }
 
     activate(){
