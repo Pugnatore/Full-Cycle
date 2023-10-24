@@ -14,7 +14,7 @@ export default class OrderItem {
     }
 
     get price(): number{   
-        return this._price * this._quantity;
+        return this._price;
     }
 
     get name(): string{
@@ -32,4 +32,8 @@ export default class OrderItem {
     get quantity(): number{
         return this._quantity;
     }
+
+    orderItemTotal(): number {
+        return this._price * this._quantity;
+      }
 }

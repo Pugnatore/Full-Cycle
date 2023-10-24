@@ -14,10 +14,9 @@ export default class OrderModel extends Model {
     @Column
     declare id: string;
 
-
     @ForeignKey(() => CustomerModel)
     @Column({ allowNull: false})
-    declare custumer_id: string;
+    declare customer_id: string;
 
     @BelongsTo(() => CustomerModel)
     declare customer: CustomerModel;
