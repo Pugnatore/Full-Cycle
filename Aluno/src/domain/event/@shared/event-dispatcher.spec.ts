@@ -1,10 +1,10 @@
 import { Address } from "../../entity/address";
 import { Customer } from "../../entity/customer";
-import CustomerAddressChangedEvent from "../product/customer-address-changed.event";
-import CustomerCreatedEvent from "../product/customer-created.event";
-import CustomerAddressChangedHandler from "../product/handler/customer-address-changedHandler";
-import EnviaConsoleLog1Handler from "../product/handler/customer-created-EnviaConsoleLog1Handler";
-import EnviaConsoleLog2Handler from "../product/handler/customer-created-EnviaConsoleLog2Handler";
+import CustomerAddressChangedEvent from "../customer/customer-address-changed.event";
+import CustomerCreatedEvent from "../customer/customer-created.event";
+import CustomerAddressChangedHandler from "../customer/handlers/customer-address-changedHandler";
+import EnviaConsoleLog1Handler from "../customer/handlers/customer-created-EnviaConsoleLog1Handler";
+import EnviaConsoleLog2Handler from "../customer/handlers/customer-created-EnviaConsoleLog2Handler";
 import SendEmailWhenProductIsCreatedHandler from "../product/handler/send-email-when-product-is-created.handler";
 import ProductCreatedEvent from "../product/product-created.event";
 import EventDispatcher from "./event-dispatcher";
