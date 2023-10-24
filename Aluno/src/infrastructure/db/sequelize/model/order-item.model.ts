@@ -2,7 +2,7 @@ import { BelongsTo, Column, ForeignKey, Model, PrimaryKey, Table } from "sequeli
 import CustomerModel from "./customer.model";
 import ProductModel from "./product.model";
 import OrderModel from "./order.model";
-import Order from "../../../../domain/entity/order";
+import Order from "../../../../domain/checkout/entity/order";
 
 
 @Table({
