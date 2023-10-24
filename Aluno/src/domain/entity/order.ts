@@ -55,6 +55,18 @@ export default class Order {
         this._items.push(...items);
     }
 
+    removeItem(item: OrderItem): void {
+        const index = this._items.findIndex(i => i.id === item.id);
+        if(index >= 0)
+            this._items.splice(index, 1);
+        else
+            throw new Error("Item not found");
+    }
+
+    removeItems(items: OrderItem[]): void {
+        items.forEach(item => this.removeItem(item));
+    }
+
     clearOrderItems(): void {
         this._items = [];
     }
