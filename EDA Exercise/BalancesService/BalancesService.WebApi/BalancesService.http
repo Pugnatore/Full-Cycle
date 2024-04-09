@@ -1,0 +1,6 @@
+@BalancesService_HostAddress = http://localhost:3003
+
+GET {{BalancesService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
