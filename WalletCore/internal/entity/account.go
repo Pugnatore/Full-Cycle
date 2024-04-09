@@ -1,6 +1,7 @@
 package entity
 
 import (
+	"fmt"
 	"github.com/google/uuid"
 	"time"
 )
@@ -15,9 +16,9 @@ type Account struct {
 
 func NewAccount(client *Client) *Account {
 	if client == nil {
+		fmt.Println("Client is nil")
 		return nil
 	}
-
 	account := &Account{
 		ID:        uuid.New().String(),
 		Client:    client,
@@ -25,11 +26,7 @@ func NewAccount(client *Client) *Account {
 		CreatedAt: time.Now(),
 		UpdatedAt: time.Now(),
 	}
-	//err := account.Validate()
-	//if err != nil {
-	//	return nil, err
-	//}
-
+	fmt.Println("NewAccount")
 	return account
 }
 

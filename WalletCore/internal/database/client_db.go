@@ -3,6 +3,7 @@ package database
 import (
 	"WalletCore/internal/entity"
 	"database/sql"
+	"fmt"
 )
 
 type ClientDb struct {
@@ -14,24 +15,27 @@ func NewClientDb(db *sql.DB) *ClientDb {
 }
 
 func (c *ClientDb) Get(id string) (*entity.Client, error) {
-	client := entity.Client{}
+	client := &entity.Client{}
 	stmt, err := c.DB.Prepare("SELECT id, name, email, created_at FROM clients WHERE id = ?")
 	if err != nil {
+		fmt.Println("Erro ao preparar o statement")
+		panic(err)
 		return nil, err
 	}
 	defer stmt.Close()
-
 	row := stmt.QueryRow(id)
-
 	if err := row.Scan(&client.ID, &client.Name, &client.Email, &client.CreatedAt); err != nil {
+		fmt.Println("Erro ao buscar o cliente")
+		panic(err)
 		return nil, err
 	}
-	return &client, nil
+	return client, nil
 }
 
 func (c *ClientDb) Save(client *entity.Client) error {
 	stmt, err := c.DB.Prepare("INSERT INTO clients (id, name, email, created_at) VALUES (?, ?, ?, ?)")
 	if err != nil {
+		fmt.Println("Erro ao preparar o statement")
 		return err
 	}
 	defer stmt.Close()

@@ -3,10 +3,11 @@ package create_account
 import (
 	"WalletCore/internal/entity"
 	"WalletCore/internal/gateway"
+	"fmt"
 )
 
 type CreateAccountInputDto struct {
-	CliendId string
+	ClientId string `json:"client_id"`
 }
 
 type CreateAccountOutputDto struct {
@@ -25,15 +26,18 @@ func NewCreateAccountUseCase(accountGateway gateway.AccountGateway, clientGatewa
 	}
 }
 
-func (useCase *CreateAccountUseCase) Execute(input *CreateAccountInputDto) (*CreateAccountOutputDto, error) {
-	client, err := useCase.clientGateway.Get(input.CliendId)
+func (useCase *CreateAccountUseCase) Execute(input CreateAccountInputDto) (*CreateAccountOutputDto, error) {
+	fmt.Println("CreateAccountUseCase.Execute")
+	client, err := useCase.clientGateway.Get(input.ClientId)
 	if err != nil {
+		fmt.Println("Erro ao buscar o cliente")
 		return nil, err
 	}
 
 	account := entity.NewAccount(client)
 	err = useCase.accountGateway.Save(account)
 	if err != nil {
+		fmt.Println("Erro ao salvar a conta")
 		return nil, err
 	}
 

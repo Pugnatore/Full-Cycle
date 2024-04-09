@@ -11,8 +11,8 @@ type Client struct {
 	Name      string
 	Email     string
 	Accounts  []*Account
-	CreatedAt time.Time
-	UpdatedAt time.Time
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
 }
 
 func NewClient(name string, email string) (*Client, error) {
