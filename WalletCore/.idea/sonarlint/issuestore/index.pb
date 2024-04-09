@@ -174,3 +174,5 @@ Q
 !internal/event/balance_updated.go,8\7\879b18577323fadf856182fcb1069afc8c19e857
 _
 /internal/event/handler/balance_updated_kafka.go,0\0\00365153cf048ca0d4a3456defec8eb1678c3230
+H
+.docker/mysql/mysql.sock,0\3\038c22a3f61bd5e19168c58613d1149b253a6f06
